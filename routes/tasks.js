@@ -32,7 +32,7 @@ router.get('/getTasks', function(req, res, next){
 router.post('/addTask', function(req, res, next){
     if (req.body && req.body.name && req.body.description && req.body.dueDate){
         let queryCreateTasks = 'INSERT INTO tasks (name, description, dueDate) \
-        VALUES("'+req.body.name+'","'+req.body.description+'","'+req.body.description+'")';''
+        VALUES("'+req.body.name+'","'+req.body.description+'","'+req.body.dueDate+'")';''
         connection.query(queryCreateTasks, function(err, results, filds){
             if(err){
                 res.status(500).json(err);

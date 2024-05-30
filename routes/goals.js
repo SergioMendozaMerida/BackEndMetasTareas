@@ -32,7 +32,7 @@ router.get('/getGoals', function(req, res, next){
 router.post('/addGoals', function(req, res, next){
     if (req.body && req.body.name && req.body.description && req.body.dueDate){
         let queryCreateGoal = 'INSERT INTO goals (name, description, dueDate) \
-        VALUES("'+req.body.name+'","'+req.body.description+'","'+req.body.description+'")';
+        VALUES("'+req.body.name+'","'+req.body.description+'","'+req.body.dueDate+'")';
         connection.query(queryCreateGoal, function(err, results, filds){
             if(err){
                 res.status(500).json(err);
